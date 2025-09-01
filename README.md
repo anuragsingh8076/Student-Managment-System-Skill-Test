@@ -1,16 +1,18 @@
-Frontend - Student Management System
 
-A modern React application built with TypeScript, Material-UI, and Redux Toolkit for managing school operations.
-Now fully stable ✅ with all features implemented and working smoothly.
+# 🎓 Student Management System - Frontend
 
-🚀 Quick Start
-Prerequisites
+A modern React + TypeScript application with **Material-UI** and **Redux Toolkit** for managing school operations efficiently.  
 
-Node.js (v16 or higher)
+---
 
-npm or yarn
+## 🚀 Quick Start
 
-Installation & Setup
+### Prerequisites
+- **Node.js** v16+
+- **npm** or **yarn**
+
+### Installation & Setup
+```bash
 # Install dependencies
 npm install
 
@@ -25,147 +27,135 @@ npm run lint
 
 # Format code
 npm run format
+````
 
-Demo Credentials
+---
 
-Username: admin@school-admin.com
+## 🛠️ Tech Stack
 
-Password: 3OU4zn3q6Zh9
+* **React 18** + **TypeScript**
+* **Vite** (Fast build tool)
+* **Material-UI (MUI v6)** (UI Components)
+* **Redux Toolkit** (State management)
+* **RTK Query** (API fetching & caching)
+* **React Hook Form** + **Zod** (Forms & validation)
+* **Redux Persist** (Persistent state)
 
-🛠️ Technology Stack
-Core Technologies
+---
 
-React 18 – Modern React with hooks and concurrent features
+## 📂 Project Structure
 
-TypeScript – Type-safe JavaScript for better development experience
-
-Vite – Fast build tool and development server
-
-Material-UI (MUI) v6 – Comprehensive React component library
-
-State Management
-
-Redux Toolkit – Simplified Redux API
-
-RTK Query – Data fetching and caching
-
-Redux Persist – State persistence across sessions
-
-Form Handling & Validation
-
-React Hook Form – Performant forms
-
-Zod – Schema validation with TypeScript support
-
-Development Tools
-
-ESLint – Code linting
-
-Prettier – Code formatting
-
-Husky – Pre-commit hooks
-
-📁 Project Structure
+```
 src/
-├── api/                    # API configuration
-├── assets/                 # Static assets
-├── components/             # Shared components
-├── domains/                # Feature-based modules
-├── hooks/                  # Custom hooks
-├── routes/                 # App routing
-├── store/                  # Redux store
-├── theme/                  # MUI theme
-├── utils/                  # Utility functions
-├── app.tsx                 # Main app
-├── main.tsx                # Entry point
-└── vite-env.d.ts           # Type definitions
+├── api/                  # API config & base setup
+├── assets/               # Static assets
+├── components/           # Shared components (UI, forms, layout)
+├── domains/              # Feature-based modules (auth, students, staff, etc.)
+├── hooks/                # Custom React hooks
+├── routes/               # App routing & protected routes
+├── store/                # Redux store & slices
+├── theme/                # MUI theme customization
+├── utils/                # Helpers, validators, constants
+├── app.tsx               # Main app component
+├── main.tsx              # App entry point
+```
 
-🎯 Key Features
-✅ Authentication & Authorization
+---
 
-JWT-based auth with refresh tokens
+## 🎯 Key Features
 
-Role-based access control (RBAC)
+✅ **Authentication & Authorization**
 
-Protected routes & components
+* JWT with refresh tokens
+* Role-Based Access Control (RBAC)
+* Protected routes & components
 
-Password setup, reset, and email verification
+✅ **Dashboard**
 
-✅ Dashboard
+* User stats & analytics
+* Recent notices & announcements
 
-User statistics & analytics
+✅ **Student Management**
 
-Notices, birthdays, and quick actions
+* Student registration & profile
+* Academic records & class assignment
 
-Leave overview
+✅ **Notice System**
 
-✅ Student Management
+* Create, approve & distribute notices
+* Role-based access with rich text editor
 
-Student registration & profile management
+✅ **Leave Management**
 
-Class/section assignment
+* Leave requests & approvals
+* Leave policy configuration
 
-Academic record tracking
+✅ **Staff Management**
 
-✅ Notice System
+* Employee profiles
+* Department & role assignment
 
-Create & manage notices
+---
 
-Role-based distribution
+## 📜 Scripts Reference
 
-Approval workflow
+| Script                 | Description               |
+| ---------------------- | ------------------------- |
+| `npm run dev`          | Start development server  |
+| `npm run build`        | Build for production      |
+| `npm run preview`      | Preview production build  |
+| `npm run lint`         | Run ESLint                |
+| `npm run lint:fix`     | Fix ESLint issues         |
+| `npm run prettier`     | Check code formatting     |
+| `npm run prettier:fix` | Fix formatting            |
+| `npm run format`       | Run prettier + lint fixes |
 
-Rich text editor
+---
 
-✅ Leave Management
+## 🔧 Development Guidelines
 
-Leave policies
+* **File Naming** → `kebab-case`
+* **Components** → `PascalCase`
+* **Variables & Functions** → `camelCase`
+* **Imports** → Use absolute imports from `src/`
 
-Request submission & approvals
+---
 
-History & reporting
+## 🧪 Testing
 
-✅ Staff Management
-
-Employee profiles
-
-Department & role assignment
-
-Permissions management
-
-🔧 Development Guidelines
-
-File Names: kebab-case
-
-Components: PascalCase
-
-Variables/Functions: camelCase
-
-Imports: Use absolute imports from src/
-
-🧪 Testing
+```bash
 # Run unit tests
 npm run test
 
 # Run tests in watch mode
 npm run test:watch
 
-# Generate coverage report
+# Coverage report
 npm run test:coverage
+```
 
-🚀 Deployment
-Build for Production
-npm run build
-npm run preview
+**Testing Stack**
 
-Environment Variables
+* React Testing Library
+* Mock API calls
+* Unit tests for utilities
 
-.env
+---
 
+## 🚀 Deployment
+
+### Environment Variables
+
+Create a `.env` file:
+
+```env
 VITE_API_URL=http://localhost:5007
 VITE_APP_NAME=Student Management System
+```
 
-Docker Deployment
+### Docker Deployment
+
+```dockerfile
 FROM node:18-alpine
 WORKDIR /app
 COPY package*.json ./
@@ -174,42 +164,30 @@ COPY . .
 RUN npm run build
 EXPOSE 3000
 CMD ["npm", "run", "preview"]
+```
 
-📚 Resources
+---
 
-React Docs
+## 🤝 Contributing
 
-TypeScript Docs
+1. Follow code standards
+2. Write tests for new features
+3. Update docs when required
+4. Use conventional commits
+5. Ensure lint & formatting checks pass
 
-MUI Docs
+---
 
-Redux Toolkit
+## 📚 Resources
 
-React Hook Form
+* [React Docs](https://react.dev/)
+* [TypeScript Docs](https://www.typescriptlang.org/docs/)
+* [Material-UI Docs](https://mui.com/)
+* [Redux Toolkit](https://redux-toolkit.js.org/)
+* [React Hook Form](https://react-hook-form.com/)
+* [Zod](https://zod.dev/)
 
-Zod
+---
 
-🤝 Contributing
 
-Follow code standards
 
-Write unit tests for new features
-
-Update documentation
-
-Use conventional commits
-
-Pass lint & formatting checks
-
-📄 Scripts Reference
-Script	Description
-npm run dev	Start dev server
-npm run build	Build for production
-npm run preview	Preview production build
-npm run lint	Run ESLint
-npm run lint:fix	Fix lint issues
-npm run prettier	Check formatting
-npm run prettier:fix	Fix formatting
-npm run format	Run both lint & prettier fixes
-
-✅ All issues fixed. Project is production-ready! 🎉
