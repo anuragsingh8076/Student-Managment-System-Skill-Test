@@ -34,7 +34,7 @@ npm run format
 - **Location**: `/app/notices/add`  
 - **Issue**: When clicking the **'Save'** button, the **`description`** field was not being saved.  
 
-#### 🔧 How I Fixed It (TypeScript approach):
+#### 🔧 How I Fixed It :
 1. Identified that the `description` input was **not bound** to state, so its value never reached the API.  
 2. Updated the form with **React useState + TypeScript types** for strong typing.  
 3. Corrected the **onChange handler** to update the `description` field properly.  
