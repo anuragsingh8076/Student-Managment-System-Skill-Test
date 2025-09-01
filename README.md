@@ -30,18 +30,47 @@ npm run format
 ````
 ## ✅ Fixes Implemented (Assessment Challenge)
 
-### Problem 1: Frontend Developer Challenge  
+### Problem 1: Frontend Developer Challenge (TypeScript)
 - **Location**: `/app/notices/add`  
 - **Issue**: When clicking the **'Save'** button, the **`description`** field was not being saved.  
 
-#### 🔧 How I Fixed It:
-1. Checked the **form state** and found that the `description` field was not properly bound.  
-2. Updated the form to use **React state + React Hook Form** so the description field value is captured.  
-3. Fixed the **onChange handler** for the description input to correctly update state.  
-4. Ensured the field is included in the **payload** when making the API request.  
-5. Tested by creating a new notice and verified that the description is stored successfully in the backend.  
+#### 🔧 How I Fixed It (TypeScript approach):
+1. Identified that the `description` input was **not bound** to state, so its value never reached the API.  
+2. Updated the form with **React useState + TypeScript types** for strong typing.  
+3. Corrected the **onChange handler** to update the `description` field properly.  
+4. Ensured the `description` field is included in the **API request body**.  
+5. Tested by submitting a new notice → backend now receives and saves the `description` field.  
 
-- **Status**: ✅ Fixed & Verified
+#### ✅ Example Code Snippet (Fixed)
+```tsx
+// Before (problem: description not updating)
+const [title, setTitle] = useState<string>("");
+// description missing here ❌
+
+// After (fixed with TypeScript)
+const [title, setTitle] = useState<string>("");
+const [description, setDescription] = useState<string>("");
+
+const handleSubmit = async () => {
+  await addNotice({
+    title,
+    description, // ✅ Now included in payload
+  });
+};
+
+// JSX
+<input
+  type="text"
+  value={title}
+  onChange={(e) => setTitle(e.target.value)}
+/>
+
+<textarea
+  value={description}
+  onChange={(e) => setDescription(e.target.value)}
+/>
+
+
 
 
 
